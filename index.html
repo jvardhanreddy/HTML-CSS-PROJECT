@@ -3,347 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography Portfolio</title>
-  <style>
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: #222222;
-      color: white;
-    }
-
-    header .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-
-    header nav ul {
-      display: flex;
-      gap: 15px;
-    }
-    
-
-    header nav ul li {
-      padding: 10px 15px;
-    }
-
-    header nav ul li:hover {
-      background: #444;
-      border-radius: 5px;
-    }
-    
-    
-    .hero {
-      background: url('https://www.adorama.com/alc/wp-content/uploads/2017/06/2-shutterstock_172791128.jpg') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    .hero a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #007BFF;
-      color: white;
-      border-radius: 5px;
-    }
-
-    .hero a:hover {
-      background: #0056b3;
-    }
-
-    
-    .gallery {
-      padding: 50px 20px;
-      background: #f9f9f9;
-    }
-
-    .gallery h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2em;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery-grid img {
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
-
-    
-    .about {
-      padding: 50px 20px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    
-    .about img {
-      flex: 1;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      
-    }
-    .about img:hover{
-      transform: scale(1.05);
-    }
-
-
-    .about-content {
-      flex: 2;
-    }
-
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-
-    .about p {
-      margin-bottom: 20px;
-    }
-    
-    
-    .contact {
-      padding: 50px 20px;
-      background: #333;
-      color: white;
-      text-align: center;
-    }
-
-    .contact h2 {
-      margin-bottom: 20px;
-    }
-
-    .contact form {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .contact form input,
-    .contact form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .contact form button {
-      padding: 10px 20px;
-      background: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .contact form button:hover {
-      background: #0056b3;
-    }
-
-    
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background: #222;
-      color: white;
-      margin-top: 20px;
-    }
-
-    footer p {
-      font-size: 0.9em;
-    }
-    /* From Uiverse.io by mi-series */ 
-.btn {
-  outline: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #40B3A2;
-  min-width: 200px;
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
-  box-sizing: border-box;
-  padding: 16px 20px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.btn:hover {
-  opacity: .95;
-}
-
-.btn .animation {
-  border-radius: 100%;
-  animation: ripple 0.6s linear infinite;
-}
-
-@keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
-  }
-
-  100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
-  }
-}
-
-.gallery {
-  padding: 10px 20px;
-  border: none;
-  font-size: 17px;
-  color: #fff;
-  border-radius: 7px;
-  letter-spacing: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: 0.5s;
-  transition-property: box-shadow;
-}
-
-.gallery {
-  background: rgb(0,140,255);
-  box-shadow: 0 0 25px rgb(0,140,255);
-}
-
-.gallery:hover {
-  box-shadow: 0 0 5px rgb(190, 222, 6),
-              0 0 25px rgb(235, 235, 9),
-              0 0 50px rgb(70, 94, 4),
-              0 0 100px rgb(58, 59, 4);
-}
-  </style>
+  <title>Christmas Celebration</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">My Photography</div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <button id="go-to-login">Login</button>
+    <button id="go-to-register">Register</button>
+    <button id="go-to-home" class="hidden">Home</button>
+  </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div>
-      <h1>Welcome to My World</h1>
-      <p>Discover stunning photography and inspiring moments.</p>
-      
-<button class="gallery">
-    Explore Gallery
-</button>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
-    <h2>Photo Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://cdn.prod.website-files.com/5f58a077d654db1a689fd95b/62e3f0f938837cb1dcdb1f33_picfair-015297037-photographers-taking-pictures-in-the-desert-at-sunset-fu-PREVIEW-ONLY%20(1).jpg" alt="Photo 1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg" alt="Photo 2">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1GFRejI4pr6QvUGhwSvT656fio72JH1LE-A&s" width="400px" height="235px" alt="Photo 3">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPYjT0vP7V-ptWyF_IntpCd-6G3zrVXC7mA&s" width="400px" height="235px" alt="Photo 4">
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <img src="https://via.placeholder.com/400x400/7f7fff/fff?text=About+Me" alt="About Me">
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>
-        I'm a passionate photographer capturing life's most beautiful moments. My journey began years ago, inspired by the endless possibilities of storytelling through a lens.
-      </p>
-      <p>
-        From landscapes to portraits, my work reflects my love for light, composition, and creativity.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/xwpkagjy"  method="POST" >
-      <input name="Name" type="text" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Your Email" required>
-      <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-      
-<div>
-    <button class="btn"><i class="animation"></i>send Message<i class="animation"></i>
-    </button>
-</div>
+  <!-- Login Page -->
+  <div id="login-page" class="container">
+    <h1>🎄 Welcome to Christmas Celebration 🎅</h1>
+    <form id="login-form">
+      <label for="login-username">Username:</label>
+      <input type="text" id="login-username" placeholder="Enter your username" required>
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" placeholder="Enter your password" required>
+      <button type="submit">Login</button>
     </form>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 My Photography. All Rights Reserved.</p>
-  </footer>
+  <!-- Register Page -->
+  <div id="register-page" class="container hidden">
+    <h1>Create an Account 🎁</h1>
+    <form id="register-form">
+      <label for="register-username">Username:</label>
+      <input type="text" id="register-username" placeholder="Choose a username" required>
+      <label for="register-password">Password:</label>
+      <input type="password" id="register-password" placeholder="Choose a password" required>
+      <label for="register-email">Email:</label>
+      <input type="email" id="register-email" placeholder="Enter your email" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <!-- Home Page -->
+  <div id="home-page" class="container hidden">
+    <header>
+      <h1>Merry Christmas and Happy New Year 2025! 🎉</h1>
+    </header>
+    <div class="profile">
+      <!-- Updated to include the uploaded image as the profile photo -->
+      <img src="images/profile.jpg" alt="Profile Photo" class="profile-photo">
+
+
+
+      <h2>Welcome, <span id="user-name"></span>!</h2>
+    </div>
+    <p>
+      Christmas is a time to share love, joy, and happiness with family and friends. Let’s make this festive season memorable and welcome 2025 with open hearts and new hopes. 🎄✨
+    </p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
